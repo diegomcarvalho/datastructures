@@ -203,19 +203,13 @@ class LinkedList:
 
     def remove(self, key):
         node = self.find_node(key)
-
         if not node:
             return
-
         self.remove_elem(node)
-
         return
 
     def delete(self):
         self.remove_elem(self.head)
-
-        self.len -= 1
-
         return
 
     def reverse(self):
