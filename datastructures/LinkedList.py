@@ -49,7 +49,7 @@ class LinkedList:
         self.head = None
         self.tail = None
         self.len = 0
-        
+
         if inter == None:
             return
         for i in inter:
@@ -213,6 +213,8 @@ class LinkedList:
 
     def delete(self):
         self.remove_elem(self.head)
+
+        self.len -= 1
 
         return
 
