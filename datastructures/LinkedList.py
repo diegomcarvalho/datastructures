@@ -56,6 +56,10 @@ class LinkedList:
             self.insert(i)       
         return
 
+    def __del__(self):
+        self.clear()
+        return
+
     def __repr__(self):
         nodes = []
         curr = self.head
@@ -211,6 +215,15 @@ class LinkedList:
     def delete(self):
         self.remove_elem(self.head)
         return
+
+    def clear(self):
+        curr = self.head
+        while curr:
+            tmp = curr
+            curr = curr.next
+            self.remove_elem(tmp)
+        return None
+
 
     def reverse(self):
         """
