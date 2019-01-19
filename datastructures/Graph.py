@@ -28,7 +28,6 @@ class Graph:
             return True
         return False
 
-
     def breadth_first_search(self, node, func_visit=None) -> list:
         visited = set()
         queue = deque()
@@ -51,7 +50,7 @@ class Graph:
 
     def depth_first_search(self, node, func_visit=None) -> list:
         visited = set()
-        stack = deque()
+        stack = list()
         dfs = list()
         visited.add(node)
         dfs.append(node)

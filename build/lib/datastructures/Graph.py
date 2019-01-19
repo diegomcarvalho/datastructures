@@ -23,6 +23,10 @@ class Graph:
         self.VEset[j].append(i)
         return
 
+    def is_edge(self, i, j):
+        if j in self.VEset[i]:
+            return True
+        return False
 
     def breadth_first_search(self, node, func_visit=None) -> list:
         visited = set()
@@ -46,7 +50,7 @@ class Graph:
 
     def depth_first_search(self, node, func_visit=None) -> list:
         visited = set()
-        stack = deque()
+        stack = list()
         dfs = list()
         visited.add(node)
         dfs.append(node)
