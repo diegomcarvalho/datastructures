@@ -75,7 +75,6 @@ class Graph:
 
         bag.add(node)
         while bag:
-            print(bag)
             v = bag.take()
             if v not in visited:
                 visited.add(v)
