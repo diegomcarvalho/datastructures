@@ -1,9 +1,9 @@
 from .LinkedList import LinkedListNode, LinkedList
 
 def remove_dups( ls: LinkedList ) -> None:
-    item_list: set = set()
+    item_list = set()
 
-    curr: LinkedListNode = ls.head
+    curr = ls.head
     while curr:
         if curr.data in item_list:
             curr.prev.next = curr.next

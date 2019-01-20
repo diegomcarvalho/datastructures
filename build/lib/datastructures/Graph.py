@@ -1,6 +1,21 @@
 from collections import defaultdict, deque
 from .LinkedList import LinkedList
 
+class Visitor:
+    def __init__(self, g):
+        self.sum = 0
+        self.num = 0
+        self.g = g
+
+    def __call__(self, data):
+        self.sum += len(self.g.VEset[data])
+        self.num += 1
+
+    def mean_deg(self):
+        return self.sum / self.num
+
+
+
 class BagStack(list):
     def __init__(self) -> None:
         list(self)

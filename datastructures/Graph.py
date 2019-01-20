@@ -1,5 +1,20 @@
 from collections import defaultdict, deque
 from .LinkedList import LinkedList
+import heapq as hpq
+
+class Visitor:
+    def __init__(self, g):
+        self.sum = 0
+        self.num = 0
+        self.g = g
+
+    def __call__(self, data):
+        self.sum += len(self.g.VEset[data])
+        self.num += 1
+
+    def mean_deg(self):
+        return self.sum / self.num
+
 
 class BagStack(list):
     def __init__(self) -> None:
@@ -20,6 +35,16 @@ class BagQueue(deque):
         return
     def take(self) -> object:
         return self.pop()
+
+class BagPriQueue(list):
+    def __init__(self) -> None:
+        list(self)
+        return
+    def add(self, data) -> None:
+        hpq.heappush(self, data)
+        return
+    def take(self) -> object:
+        return hpq.heappop(self)
 
 
 class Graph:
